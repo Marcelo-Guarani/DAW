@@ -42,7 +42,7 @@ public class TestePersistirVooAgendado {
     public void teste() {
         try {
             VooAgendado va = new VooAgendado();
-            va.setAeronave("Embraer A195");
+            va.setAeronave("A195");
             va.setData(Calendar.getInstance());
             va.setTotalPassageiros(90);
            

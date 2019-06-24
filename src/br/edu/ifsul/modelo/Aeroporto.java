@@ -134,6 +134,14 @@ public class Aeroporto implements Serializable{
     public String toString() {
         return nome;
     }
+
+    public Set<Voo> getListaEscalas() {
+        return listaEscalas;
+    }
+
+    public void setListaEscalas(Set<Voo> listaEscalas) {
+        this.listaEscalas = listaEscalas;
+    }
     
       
 }

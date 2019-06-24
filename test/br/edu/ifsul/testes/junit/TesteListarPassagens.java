@@ -39,7 +39,9 @@ public class TesteListarPassagens {
     public void teste(){
         List<Passagem> passagens = em.createQuery("from Passagem").getResultList();
         for(Passagem p: passagens){
-            System.out.println(p);
+            System.out.println(p.getPessoa());
+            System.out.println(p.getVooAgendado().getData());
+            System.out.println(p.getVooAgendado().getVoo());
         }
     }
 }

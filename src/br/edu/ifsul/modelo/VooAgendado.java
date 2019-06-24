@@ -6,6 +6,7 @@
 package br.edu.ifsul.modelo;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -141,10 +142,23 @@ public class VooAgendado implements Serializable {
     public void removerPassagem(int index) {
         passagens.remove(index);
     }
-    
+
     @Override
     public String toString() {
-        return aeronave +" - "+ totalPassageiros;
+        return aeronave + " - " + totalPassageiros;
     }
-    
+
+    public List<Passagem> getPassagens() {
+        return passagens;
+    }
+
+    public void setPassagens(List<Passagem> passagens) {
+        this.passagens = passagens;
+    }
+
+    public String getDataFormatada() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return sdf.format(data.getTime());
+    }
+
 }

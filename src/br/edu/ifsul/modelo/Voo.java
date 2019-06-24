@@ -41,7 +41,7 @@ public class Voo implements Serializable {
     private Integer id;
 
     @NotBlank(message = "A descrição do voo é obrigatório por vias de segurança!")
-    @Column(name = "descricao", nullable = false)
+    @Column(name = "descricao", nullable = false, columnDefinition = "TEXT")
     private String descricao;
 
     @NotNull(message = "O tempo estimado do voo deve ser informado!")
@@ -161,5 +161,23 @@ public class Voo implements Serializable {
     public String toString() {
         return descricao;
     }
+
+    public Set<Aeroporto> getListaEscalas() {
+        return listaEscalas;
+    }
+
+    public void setListaEscalas(Set<Aeroporto> listaEscalas) {
+        this.listaEscalas = listaEscalas;
+    }
+
+    public List<VooAgendado> getVoosAgendados() {
+        return voosAgendados;
+    }
+
+    public void setVoosAgendados(List<VooAgendado> voosAgendados) {
+        this.voosAgendados = voosAgendados;
+    }
+    
+    
 
 }

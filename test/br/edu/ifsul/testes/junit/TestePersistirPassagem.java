@@ -44,16 +44,16 @@ public class TestePersistirPassagem {
         try {
             Passagem p = new Passagem();
             p.setVooAgendado(em.find(VooAgendado.class, 1));
-            p.setClasse(em.find(Classe.class, 2)); // National Flight - Executive
-            p.setBagagem(2);
+            p.setClasse(em.find(Classe.class, 3)); // National Flight - Executive
+            p.setBagagem(1);
             p.setDataCompra(Calendar.getInstance());
             p.setPessoa(em.find(Pessoa.class, 1)); //Marcelo
             
             VooAgendado va = new VooAgendado();
-            va.setAeronave("A720");
+            va.setAeronave("A700");
             va.setData(Calendar.getInstance());
-            va.setTotalPassageiros(80);
-            va.setVoo(em.find(Voo.class, 10));
+            va.setTotalPassageiros(90);
+            va.setVoo(em.find(Voo.class, 11));
             va.adicionarPassagem(p);
 
             em.getTransaction().begin();

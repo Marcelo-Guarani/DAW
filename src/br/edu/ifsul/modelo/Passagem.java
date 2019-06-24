@@ -6,6 +6,7 @@
 package br.edu.ifsul.modelo;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Objects;
 import javax.persistence.Column;
@@ -142,4 +143,9 @@ public class Passagem implements Serializable{
         return ""+pessoa;
     }
           
+    
+    public String getDataFormatada(){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return sdf.format(dataCompra.getTime());
+    }
 }
